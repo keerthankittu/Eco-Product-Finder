@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # 1. Load data and train model efficiently using caching
 @st.cache_data
 def load_and_train():
-    df = pd.read_csv("C:/Users/KEERTHAN/Downloads/suistainable/Amazon.csv").dropna(subset=['Title'])
+    df = pd.read_csv("Amazon.csv").dropna(subset=['Title'])
     vectorizer = TfidfVectorizer(stop_words='english')
     tfidf_matrix = vectorizer.fit_transform(df['Title'])
     return df, vectorizer, tfidf_matrix
@@ -38,7 +38,7 @@ def add_bg_from_local(image_file):
      )
 
 # Call the function with the exact name of the file you saved
-add_bg_from_local("C:/Edunet interns/bg_image.jpg")
+add_bg_from_local("bg_image.jpg")
 # -----------------------------------
 st.write("Discover sustainable alternatives for your everyday products :) ")
 
